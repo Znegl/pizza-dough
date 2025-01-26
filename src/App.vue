@@ -17,7 +17,7 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
 
 <template>
   <main>
-    <h1>Pizzadej</h1>
+    <h1>Pizza&shy;dej</h1>
     <table>
       <tbody>
       <tr>
@@ -90,6 +90,6 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
 
 <style scoped>
 main {
-
+  padding: 1rem;
 }
 </style>
