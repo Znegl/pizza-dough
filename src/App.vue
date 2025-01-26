@@ -7,8 +7,9 @@ const ratio = ref(Math.round(415 / 600 * 100))
 
 const water = computed(() => flour.value * ratio.value / 100)
 
-const yeast = computed(() => Math.round(flour.value / 600 * 16))
-const salt = computed(() => Math.round(flour.value / 600 * 2))
+const dryYeast = ref(false)
+const yeast = computed(() => flour.value / 600 * 2 * (dryYeast.value ? 11.8 / 50 : 1))
+const salt = computed(() => Math.round(flour.value / 600 * 16))
 
 const totalWeight = computed(() => flour.value + water.value + yeast.value + salt.value)
 const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value))
@@ -39,10 +40,24 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
         </td>
       </tr>
       <tr>
+        <th>Tørgær</th>
+        <td>
+          <input type="checkbox" v-model="dryYeast">
+          Ja
+        </td>
+      </tr>
+      <tr>
         <th>Gær</th>
         <td>
-          <output>{{ yeast }}</output>
-          gram
+          <output>{{
+              yeast.toLocaleString('da', {
+                style: 'unit',
+                unit: 'gram',
+                unitDisplay: 'long',
+                maximumFractionDigits: 1
+              })
+            }}
+          </output>
         </td>
       </tr>
       <tr>
@@ -55,7 +70,7 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
       <tr>
         <th>Dej/pizza</th>
         <td>
-          <output>{{ doughPerPizza}}</output>
+          <output>{{ doughPerPizza }}</output>
           gram
         </td>
       </tr>
