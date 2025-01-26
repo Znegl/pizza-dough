@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: Mukta, sans-serif;
+  font-family: Sora, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   display: flex;
@@ -51,7 +51,7 @@ th {
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 li {
