@@ -7,15 +7,18 @@
 }
 
 :root {
-  --ds-color-dark: #303020;
-  --ds-color-dark-medium: #554;
-  --ds-color-light-medium: #ddc;
-  --ds-color-light: antiquewhite;
+  --ds-color-base: #dacabb;
+  --ds-color-light-plus: color-mix(in srgb, var(--ds-color-base), white 50%);
+  --ds-color-light: var(--ds-color-base);
+  --ds-color-light-medium: color-mix(in srgb, var(--ds-color-base), black 15%);
+  --ds-color-dark-medium: color-mix(in srgb, var(--ds-color-base), black 50%);
+  --ds-color-dark: color-mix(in srgb, var(--ds-color-base), black 80%);
+  --ds-color-dark-plus: color-mix(in srgb, var(--ds-color-base), black 85%);
 
   --text-color: var(--ds-color-dark);
   --background-color: var(--ds-color-light);
   --input-background-color: var(--ds-color-light-medium);
-  --input-border-color: var(--ds-color-dark-medium);
+  --input-text-color: var(--ds-color-dark-plus);
 }
 
 body {
@@ -45,7 +48,8 @@ input[type=number], output {
   display: inline-block;
   padding: .5rem .75rem;
   width: 4rem;
-  border: 1px solid var(--input-border-color);
+  border: none;
+  color: var(--input-text-color);
   background-color: var(--input-background-color);
   border-radius: .5rem;
 }
