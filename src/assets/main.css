@@ -46,12 +46,36 @@ h1 {
 
 input[type=number], output {
   display: inline-block;
+  white-space: nowrap;
   padding: .5rem .75rem;
-  width: 4rem;
+  width: 5rem;
   border: none;
   color: var(--input-text-color);
   background-color: var(--input-background-color);
   border-radius: .5rem;
+}
+
+input[type=checkbox] {
+  appearance: none;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--ds-color-light-plus);
+  vertical-align: middle;
+  border-radius: .25rem;
+
+  &:checked {
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path fill='transparent' stroke='currentColor' stroke-width='2' d='M4,9, L7 12, L12 4' stroke-linecap='round' /></svg>");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
 th, td {

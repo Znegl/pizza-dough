@@ -22,34 +22,54 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
       <tbody>
       <tr>
         <th>Antal pizzaer</th>
-        <td><input type="number" v-model="pizzas" autofocus> stk.</td>
+        <td>
+          <label class="input-wrapper">
+            <input type="number" v-model="pizzas" autofocus>
+            stk.
+          </label>
+        </td>
       </tr>
       <tr>
         <th>Mel</th>
-        <td><input type="number" v-model="flour"> gram</td>
+        <td>
+          <label class="input-wrapper">
+            <input type="number" v-model="flour">
+            gram
+          </label>
+        </td>
       </tr>
       <tr>
         <th>Vandprocent</th>
-        <td><input type="range" v-model="ratio" min="0" max="100" step="1"> {{ ratio }}%</td>
+        <td>
+          <label class="input-wrapper">
+            <input type="range" v-model="ratio" min="0" max="100" step="1">
+            {{ ratio }}%
+          </label>
+        </td>
       </tr>
       <tr>
         <th>Vand</th>
         <td>
-          <output>{{ water }}</output>
-          gram
+          <span class="input-wrapper">
+            <output>{{ water }}</output>
+            gram
+          </span>
         </td>
       </tr>
       <tr>
         <th>Tørgær</th>
         <td>
-          <input type="checkbox" v-model="dryYeast">
-          Ja
+          <label class="input-wrapper">
+            <input type="checkbox" v-model="dryYeast">
+            Ja
+          </label>
         </td>
       </tr>
       <tr>
         <th>Gær</th>
         <td>
-          <output>{{
+          <span class="input-wrapper">
+            <output>{{
               yeast.toLocaleString('da', {
                 style: 'unit',
                 unit: 'gram',
@@ -58,20 +78,25 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
               })
             }}
           </output>
+          </span>
         </td>
       </tr>
       <tr>
         <th>Salt</th>
         <td>
-          <output>{{ salt }}</output>
-          gram
+          <span class="input-wrapper">
+            <output>{{ salt }}</output>
+            gram
+          </span>
         </td>
       </tr>
       <tr>
         <th>Dej/pizza</th>
         <td>
-          <output>{{ doughPerPizza }}</output>
-          gram
+          <span class="input-wrapper">
+            <output>{{ doughPerPizza }}</output>
+            gram
+          </span>
         </td>
       </tr>
       </tbody>
@@ -91,5 +116,11 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
 <style scoped>
 main {
   padding: 1rem;
+}
+
+.input-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
 }
 </style>
