@@ -7,7 +7,7 @@
 }
 
 :root {
-  --ds-color-base: #dacabb;
+  --ds-color-base: #dacab9;
   --ds-color-light-plus: color-mix(in srgb, var(--ds-color-base), white 50%);
   --ds-color-light: var(--ds-color-base);
   --ds-color-light-medium: color-mix(in srgb, var(--ds-color-base), black 15%);
