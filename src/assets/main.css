@@ -17,7 +17,7 @@
 
   --text-color: var(--ds-color-dark);
   --background-color: var(--ds-color-light);
-  --input-background-color: var(--ds-color-light-medium);
+  --input-background-color: var(--ds-color-light-plus);
   --input-text-color: var(--ds-color-dark-plus);
 }
 
@@ -60,7 +60,7 @@ input[type=checkbox] {
   display: inline-block;
   width: 2rem;
   height: 2rem;
-  background-color: var(--ds-color-light-plus);
+  background-color: var(--input-background-color);
   vertical-align: middle;
   border-radius: .25rem;
 
