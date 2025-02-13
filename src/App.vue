@@ -101,13 +101,31 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
       </tr>
       </tbody>
     </table>
+    <h2>Dejdag</h2>
+    <p>Dejen skal laves ~48 timer før du vil bage</p>
     <ol>
-      <li>Hæld <strong>vand</strong> og <strong>gær</strong> i en skål (f.eks. din røremaskines)</li>
-      <li>Opløs <strong>gæren</strong></li>
+      <li>Hæld <strong>vand</strong> i en skål (f.eks. din røremaskines)</li>
+      <li>Opløs <strong>gæren</strong> i vandet</li>
       <li>Hæld <strong>melet</strong> i</li>
       <li><strong>Ælt</strong> i ca. 2 minutter</li>
-      <li>Tilsæt <strong>saltet</strong></li>
+      <li>Tilsæt <strong>saltet</strong> når dejen har samlet sig</li>
       <li><strong>Ælt</strong> i ca. 10 minutter</li>
+      <li>Hæld dejen ud på bordet og lad den <strong>slappe af</strong> i ca. 20 minutter — det giver alt det magiske gluten ro til at gøre sin ting, hvilket gør dejen helt glat og smidig.</li>
+      <li>Form dejen til <strong>en stor kugle</strong></li>
+      <li>Læg dejen i en lufttæt <strong>hævekasse</strong></li>
+      <li>Sæt hævekassen <strong>på køl</strong> i 24-48 timer — jo længere, jo bedre</li>
+    </ol>
+    <h2>Bagedag</h2>
+    <p>Start 3-5 timer før du vil bage.</p>
+    <ol>
+      <li>Tag hævekassen med dejen <strong>ud af køleskabet</strong></li>
+      <li><strong>Del dejen</strong> i {{ pizzas }} lige store stykker</li>
+      <li>Form dejen til <strong>flotte kugler</strong> og læg dem i en lufttæt hævekasse</li>
+      <li>Vent 2-4 timer</li>
+      <li>Læg dit <strong>bagestål i ovnen</strong></li>
+      <li><strong>Tænd ovnen</strong> på grill og højeste temperatur (jeg plejer at bage på 300℃, men 4-500℃ er bedst)</li>
+      <li>Forbered din topping</li>
+      <li><strong>Lav og bag</strong> dine pizzaer en ad gangen. De skal bage i 1-8 minutter alt efter hvor varm din ovn er og hvor meget topping du har fyldt på. Det kan være en god ide at lade ovnen varme bagestålet i et par minutter mellem pizzaerne, så det ikke når at blive for koldt undervejs.</li>
     </ol>
     <p>Baseret på <a href="https://jonsmadklub.dk/italiensk-pizzadej/">Jons italienske pizzadej</a>.</p>
   </main>
@@ -116,6 +134,7 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
 <style scoped>
 main {
   padding: 1rem;
+  max-width: 40rem;
 }
 
 .input-wrapper {
