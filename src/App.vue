@@ -102,7 +102,7 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
       </tbody>
     </table>
     <h2>Dejdag</h2>
-    <p>Dejen skal laves ~48 timer før du vil bage</p>
+    <p>Dejen skal laves ~48 timer før du vil bage.</p>
     <ol>
       <li>Hæld <strong>vand</strong> i en skål (f.eks. din røremaskines)</li>
       <li>Opløs <strong>gæren</strong> i vandet</li>
