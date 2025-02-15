@@ -133,7 +133,7 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
 
 <style scoped>
 main {
-  padding: 1rem;
+  padding: 5vh 5vw;
   max-width: 40rem;
 }
 
