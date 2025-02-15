@@ -19,6 +19,13 @@
   --background-color: var(--ds-color-light);
   --input-background-color: var(--ds-color-light-plus);
   --input-text-color: var(--ds-color-dark-plus);
+
+  @media (prefers-color-scheme: dark) {
+    --text-color: var(--ds-color-light-plus);
+    --background-color: var(--ds-color-dark);
+    --input-background-color: var(--ds-color-dark-medium);
+    --input-text-color: var(--ds-color-light-plus);
+  }
 }
 
 body {
