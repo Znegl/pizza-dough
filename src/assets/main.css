@@ -7,24 +7,36 @@
 }
 
 :root {
-  --ds-color-base: #dacab9;
-  --ds-color-light-plus: color-mix(in srgb, var(--ds-color-base), white 50%);
-  --ds-color-light: var(--ds-color-base);
-  --ds-color-light-medium: color-mix(in srgb, var(--ds-color-base), black 15%);
-  --ds-color-dark-medium: color-mix(in srgb, var(--ds-color-base), black 50%);
-  --ds-color-dark: color-mix(in srgb, var(--ds-color-base), black 80%);
-  --ds-color-dark-plus: color-mix(in srgb, var(--ds-color-base), black 85%);
+  --ds-color-dough-base: #dacab9;
+  --ds-color-dough-light-plus: color-mix(in srgb, var(--ds-color-dough-base), white 50%);
+  --ds-color-dough-light: var(--ds-color-dough-base);
+  --ds-color-dough-light-medium: color-mix(in srgb, var(--ds-color-dough-base), black 15%);
+  --ds-color-dough-dark-medium: color-mix(in srgb, var(--ds-color-dough-base), black 50%);
+  --ds-color-dough-dark: color-mix(in srgb, var(--ds-color-dough-base), black 80%);
+  --ds-color-dough-dark-plus: color-mix(in srgb, var(--ds-color-dough-base), black 85%);
 
-  --text-color: var(--ds-color-dark);
-  --background-color: var(--ds-color-light);
-  --input-background-color: var(--ds-color-light-plus);
-  --input-text-color: var(--ds-color-dark-plus);
+  --ds-color-sage-base: #8bad9d;
+  --ds-color-sage-light-plus: color-mix(in srgb, var(--ds-color-sage-base), white 50%);
+  --ds-color-sage-light: var(--ds-color-sage-base);
+  --ds-color-sage-light-medium: color-mix(in srgb, var(--ds-color-sage-base), black 15%);
+  --ds-color-sage-dark-medium: color-mix(in srgb, var(--ds-color-sage-base), black 50%);
+  --ds-color-sage-dark: color-mix(in srgb, var(--ds-color-sage-base), black 80%);
+  --ds-color-sage-dark-plus: color-mix(in srgb, var(--ds-color-sage-base), black 85%);
+
+  --text-color: var(--ds-color-dough-dark);
+  --background-color: var(--ds-color-dough-light);
+  --input-background-color: var(--ds-color-dough-light-plus);
+  --input-text-color: var(--ds-color-dough-dark-plus);
+  --input-checked-color: var(--ds-color-sage-dark-medium);
+  --input-checked-color-contrast: var(--ds-color-dough-light-plus);
 
   @media (prefers-color-scheme: dark) {
-    --text-color: var(--ds-color-light-plus);
-    --background-color: var(--ds-color-dark);
-    --input-background-color: var(--ds-color-dark-medium);
-    --input-text-color: var(--ds-color-light-plus);
+    --text-color: var(--ds-color-dough-light-plus);
+    --background-color: var(--ds-color-dough-dark);
+    --input-background-color: var(--ds-color-dough-dark-medium);
+    --input-text-color: var(--ds-color-dough-light-plus);
+    --input-checked-color: var(--ds-color-sage-light);
+    --input-checked-color-contrast: var(--ds-color-dough-dark-plus);
   }
 }
 
@@ -73,23 +85,34 @@ input[type=checkbox] {
   display: inline-block;
   width: 2rem;
   height: 2rem;
-  background-color: var(--input-text-color);
+  background-color: var(--input-background-color);
   vertical-align: middle;
   border-radius: .25rem;
   overflow: hidden;
+  transition: background-color .15s ease-out;
 
     &::before {
       content: "";
       display: block;
       width: 100%;
       height: 100%;
-      background-color: var(--input-background-color);
       mask: url("/src/assets/checkmark.svg");
-      transition: transform .15s ease-out;
+      background-color: var(--input-checked-color-contrast);
+      transition: all .15s ease-out;
     }
 
-    &:checked::before {
-        transform: scale(15) translate(-5%, -10%);
+    &:checked {
+      background-color: var(--input-checked-color);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+    &:not(:checked) {
+      &::before {
+        opacity: 0;
+        transform: scale(1.5);
+      }
     }
 }
 
