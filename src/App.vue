@@ -103,7 +103,7 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
     </table>
     <h2>Dejdag</h2>
     <p>Dejen skal laves ~48 timer før du vil bage.</p>
-    <ol>
+    <ol class="recipe-step-list">
       <li>Hæld <strong>vand</strong> i en skål (f.eks. din røremaskines)</li>
       <li>Opløs <strong>gæren</strong> i vandet</li>
       <li>Hæld <strong>melet</strong> i</li>
@@ -117,7 +117,7 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
     </ol>
     <h2>Bagedag</h2>
     <p>Start 3-5 timer før du vil bage.</p>
-    <ol>
+    <ol class="recipe-step-list">
       <li>Tag hævekassen med dejen <strong>ud af køleskabet</strong></li>
       <li><strong>Del dejen</strong> i {{ pizzas }} lige store stykker</li>
       <li>Form dejen til <strong>flotte kugler</strong> og læg dem i en lufttæt hævekasse</li>
@@ -141,5 +141,49 @@ main {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
+}
+
+.recipe-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-block: 2rem;
+  counter-reset: recipe-steps;
+
+  > li {
+    position: relative;
+    display: block;
+    margin-left: 0;
+    padding-left: 3rem;
+    counter-increment: recipe-steps;
+
+    &::before {
+      content: counter(recipe-steps);
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+      margin-left: -3rem;
+      margin-right: 1rem;
+      text-align: center;
+      background: var(--divider-color);
+      border-radius: 100%;
+      left: -2rem;
+      z-index: -1;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 25%;
+        left: 3rem;
+        bottom: -1rem;
+        border: 2px solid var(--divider-color);
+        border-radius: 2px;
+      }
+    }
+  }
 }
 </style>

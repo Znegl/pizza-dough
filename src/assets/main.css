@@ -29,6 +29,7 @@
   --input-text-color: var(--ds-color-dough-dark-plus);
   --input-checked-color: var(--ds-color-sage-dark-medium);
   --input-checked-color-contrast: var(--ds-color-dough-light-plus);
+  --divider-color: var(--ds-color-dough-light-medium);
 
   @media (prefers-color-scheme: dark) {
     --text-color: var(--ds-color-dough-light-plus);
@@ -37,6 +38,7 @@
     --input-text-color: var(--ds-color-dough-light-plus);
     --input-checked-color: var(--ds-color-sage-light);
     --input-checked-color-contrast: var(--ds-color-dough-dark-plus);
+    --divider-color: var(--ds-color-dough-dark-medium);
   }
 }
 
@@ -142,4 +144,8 @@ li {
 
 ol, p {
   margin-block: 1rem;
+}
+
+p, li {
+  line-height: 1.5rem;
 }
