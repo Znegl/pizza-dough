@@ -115,7 +115,7 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
       </div>
       <section class="recipe-section">
         <h2>Dejdag</h2>
-        <p>Dejen skal laves ~48 timer før du vil bage.</p>
+        <p>Dejen skal helst laves 2-3 døgn før du vil bage. Kortere kan også gøre det, men dejen bliver ikke lige så god.</p>
         <ol class="recipe-step-list">
           <li>Hæld <strong>vand</strong> i en skål (f.eks. din røremaskines)</li>
           <li>Opløs <strong>gæren</strong> i vandet</li>
