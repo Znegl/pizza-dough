@@ -8,7 +8,7 @@ const ratio = ref(Math.round(415 / 600 * 100))
 const water = computed(() => flour.value * ratio.value / 100)
 
 const dryYeast = ref(false)
-const yeast = computed(() => flour.value / 600 * 2 * (dryYeast.value ? 11.8 / 50 : 1))
+const yeast = computed(() => flour.value / 600 * 2 * (dryYeast.value ? 1/2 : 1))
 const salt = computed(() => Math.round(flour.value / 600 * 16))
 
 const totalWeight = computed(() => flour.value + water.value + yeast.value + salt.value)
