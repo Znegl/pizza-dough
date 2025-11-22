@@ -1,8 +1,8 @@
 <script setup>
 import {computed, ref} from "vue";
 
-const pizzas = ref(4)
-const flour = ref(600)
+const pizzas = ref(6)
+const flour = ref(900)
 const ratio = ref(Math.round(415 / 600 * 100))
 
 const water = computed(() => flour.value * ratio.value / 100)
