@@ -83,13 +83,11 @@ const doughPerPizza = computed(() => Math.floor(totalWeight.value / pizzas.value
             <span class="input-wrapper">
               <output>{{
                   yeast.toLocaleString('da', {
-                    style: 'unit',
-                    unit: 'gram',
-                    unitDisplay: 'long',
                     maximumFractionDigits: 1
                   })
                 }}
             </output>
+              gram
             </span>
               </td>
             </tr>
