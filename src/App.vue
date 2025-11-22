@@ -181,7 +181,7 @@ main {
     grid-template-areas:
       "heading heading"
       "ingredients recipe-section"
-      "footer footer";
+      "ingredients footer";
   }
 }
 
@@ -201,12 +201,6 @@ h1 {
     position: sticky;
     top: 5vh;
   }
-}
-
-.settings-section {
-}
-
-.ingredients-section {
 }
 
 .recipe-section {
@@ -263,12 +257,16 @@ h1 {
   }
 }
 
-footer a {
-  color: var(--ds-color-sage-light);
+footer {
+  grid-area: footer;
 
-  @media (hover: hover) {
-    &:hover {
-      text-decoration: underline;
+  a {
+    color: var(--ds-color-sage-light);
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
